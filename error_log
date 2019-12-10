@@ -1,0 +1,14 @@
+[29-Apr-2019 11:10:43 Asia/Karachi] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/hrkp5lmis/public_html/classes/database.php on line 32
+[29-Apr-2019 11:10:54 Asia/Karachi] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/hrkp5lmis/public_html/classes/database.php on line 32
+[29-Apr-2019 11:11:06 Asia/Karachi] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/hrkp5lmis/public_html/classes/database.php on line 32
+[29-Apr-2019 12:51:25 Asia/Karachi] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/hrkp5lmis/public_html/classes/database.php on line 89
+[29-Apr-2019 12:51:25 Asia/Karachi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/hrkp5lmis/public_html/classes/database.php:89) in /home/hrkp5lmis/public_html/add_district.php on line 37
+[29-Apr-2019 12:56:16 Asia/Karachi] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/hrkp5lmis/public_html/classes/database.php on line 89
+[29-Apr-2019 12:56:16 Asia/Karachi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/hrkp5lmis/public_html/classes/database.php:89) in /home/hrkp5lmis/public_html/add_district.php on line 37
+[29-Apr-2019 12:56:51 Asia/Karachi] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/hrkp5lmis/public_html/classes/database.php on line 89
+[29-Apr-2019 12:56:51 Asia/Karachi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/hrkp5lmis/public_html/classes/database.php:89) in /home/hrkp5lmis/public_html/add_district.php on line 37
+[30-Apr-2019 09:58:53 Asia/Karachi] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/hrkp5lmis/public_html/classes/database.php on line 89
+[30-Apr-2019 09:58:53 Asia/Karachi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/hrkp5lmis/public_html/classes/database.php:89) in /home/hrkp5lmis/public_html/add_district.php on line 37
+[30-Apr-2019 10:00:02 Asia/Karachi] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/hrkp5lmis/public_html/classes/database.php on line 89
+[30-Apr-2019 10:00:02 Asia/Karachi] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/hrkp5lmis/public_html/classes/database.php:89) in /home/hrkp5lmis/public_html/add_district.php on line 35
+[11-May-2019 00:13:24 Asia/Karachi] PHP Warning:  mysqli_connect(): (HY000/2002): No such file or directory in /home/hrkp5lmis/public_html/classes/database.php on line 32
