@@ -1,0 +1,66 @@
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class category_management extends CI_Controller {
+
+    public function __construct() {
+        parent::__construct();
+        check_login_user();
+        $this->load->model('category');
+    }
+
+    public function index() {
+        $doc = new category();
+        $data = array();
+        $data['page_title'] = 'Manage Category';
+        $data['result'] = $doc->find_all();
+        $data['main_content'] = $this->load->view('category_management/index', $data, TRUE);
+        $this->load->view('layout', $data);
+    }
+    
+//    public function user() {
+//        $data = array();
+//        $data['page_title'] = 'Training User Records';
+//        $data['main_content'] = $this->load->view('training_records/user', $data, TRUE);
+//        $this->load->view('layout', $data);
+//    }
+    
+//    public function export_excel() {
+//        $data = array();
+//        $data['page_title'] = 'Specialities Records';
+//        $data['main_content'] = $this->load->view('posting_place/export_excel', $data, TRUE);
+//        $this->load->view('layout', $data);
+//    }
+
+    public function add() {
+                $category = new category();
+
+                if (isset($_REQUEST['categoryid']) && !empty($_REQUEST['categoryid'])) {
+                    $category->pk_id = $_REQUEST['categoryid'];
+                }
+
+                $category->category_value = $_POST['category_value'];
+
+                $category->is_active = 1;
+
+
+                $file = $category->save();
+                 redirect(base_url() .'category_management/index', 'refresh');
+    }
+
+
+
+
+    public function edit()
+    {
+       $category = new category();
+       $category_id = $_POST['id'];
+       $file = $category->find_by_id($category_id);
+       $data['result'] = $file->result_array();
+       $data['category_id'] = $category_id;
+       $data['page_title'] = 'Category Records';
+       $this->load->view('category_management/edit', $data);
+    }
+
+}
