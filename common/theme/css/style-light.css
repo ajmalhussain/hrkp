@@ -356,7 +356,7 @@ body > .container-fluid.documentation {
 #content {
   position: relative;
   overflow: hidden;
-  margin: 0 0 0 204px;
+  margin: 0 0 0 265px;
   background: #ffffff;
   min-width: 320px;
   min-height: 700px;
@@ -493,7 +493,7 @@ body > .container-fluid.documentation {
   border-color: rgba(0, 0, 0, 0.1);
 }
 #menu {
-  width: 204px;
+  width: 265px;
   float: left;
   position: absolute;
   left: 0;
@@ -516,7 +516,7 @@ body > .container-fluid.documentation {
   text-align: left;
   display: block;
   padding: 3px 0 0 0;
-  width: 130px;
+  width: 211px;
   float: right;
 }
 #menu .profile span strong {
@@ -625,7 +625,7 @@ body > .container-fluid.documentation {
   display: block;
   height: 39px;
   line-height: 39px;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 2px solid #05a300;
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -1361,7 +1361,7 @@ body > .container-fluid.documentation {
   padding: 0;
 }
 .widget > .widget-head {
-  background: #f8f8f8 url("../images/mosaic-pattern.png") repeat;
+  background: #05a300 url("../images/mosaic-pattern.png") repeat;
   border-bottom: 1px solid #e5e5e5;
   color: #fff;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -1396,7 +1396,7 @@ body > .container-fluid.documentation {
 }
 .widget > .widget-head .heading {
   margin: 0;
-  color: #45484d;
+  color: #fff;
   font-size: 14px;
   height: 30px;
   line-height: 30px;
@@ -3629,7 +3629,7 @@ input[type=text],
 input[type=password],
 select,
 textarea {
-  border-color: #D8D9DA;
+  border-color: green;
   color: #A7A7A7;
 }
 .control-label.center {
@@ -3762,11 +3762,11 @@ textarea {
   background-color: #f8f8f8;
 }
 .table-bordered {
-  border-color: #e5e5e5;
+  border-color: green;
 }
 .table-bordered th,
 .table-bordered td {
-  border-color: #e5e5e5;
+  border-color: green;
 }
 .table-bordered thead:first-child tr:first-child > th:first-child,
 .table-bordered tbody:first-child tr:first-child > td:first-child,
@@ -6343,4 +6343,5 @@ div.glyphicons.glyphicon-primary i:before {
 #choose-preview .box.active h3 {
   color: #c3c3c3;
   text-shadow: 0 1px 0 #fff;
+}
 }

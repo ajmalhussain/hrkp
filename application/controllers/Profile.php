@@ -13,10 +13,10 @@ class Profile extends CI_Controller {
         $this->load->model('date_time');
     }
 
-   public function index() {        
+    public function index() {
         $data = array();
         $data['page_title'] = 'Personal Record';
-        
+
         $wherestr = '';
         $where = $result = array();
         $submit = false;
@@ -90,7 +90,7 @@ class Profile extends CI_Controller {
         if (count($where) > 0) {
             $wherestr = " WHERE " . implode(" AND ", $where);
         }
-        
+
         $result['wherestr'] = $wherestr;
         $result['submit'] = $submit;
 
@@ -147,12 +147,12 @@ class Profile extends CI_Controller {
         $offset = !empty($_GET['page']) ? (($_GET['page'] - 1) * $limit) : 0;
 
         $result['offset'] = $offset;
-        
+
         $limitstr = '';
         if (!$submit) {
             $limitstr = "LIMIT $offset,$limit";
         }
-        
+
         $this->load->model('personal');
         $result['result'] = $this->personal->export_all($wherestr, $limitstr);
         // Initialize pagination class
@@ -169,54 +169,60 @@ class Profile extends CI_Controller {
             );
         }
         $result['pagination'] = new Pagination($pagConfig);
-                
+
         //$data['data'] = $this->profile_model->get_data($_POST);
         $data['main_content'] = $this->load->view('profile/index', $result, TRUE);
         $this->load->view('layout', $data);
     }
+
     public function user() {
         $data = array();
         $data['page_title'] = 'Personal Record';
         $data['main_content'] = $this->load->view('profile/user', $data, TRUE);
         $this->load->view('layout', $data);
     }
-    
+
     public function add() {
         $personal = new personal();
-         $location = new locations();
+        $location = new locations();
         $data['location'] = $location->districtdropdown();
-if(isset($_REQUEST['personalid']) && !empty($_REQUEST['personalid'])){
-    $personal->pk_id = $_REQUEST['personalid'];
-}
-$personal->name = $_POST['name'];
-$personal->father_name = $_POST['father_name'];
-$personal->gender = $_POST['gender'];
-$personal->cnic = $_POST['cnic'];
-$personal->district_of_domicile = $_POST['district_of_domicile'];
-$personal->date_of_birth = $dt->dbformat($_POST['date_of_birth']);
+        if (isset($_POST) && !empty($_POST)) {
+            if (isset($_REQUEST['personalid']) && !empty($_REQUEST['personalid'])) {
+                $personal->pk_id = $_REQUEST['personalid'];
+            }
+            $personal->name = $_POST['name'];
+            $personal->father_name = $_POST['father_name'];
+            $personal->gender = $_POST['gender'];
+            $personal->cnic = $_POST['cnic'];
+            $personal->district_of_domicile = $_POST['district_of_domicile'];
+            $personal->date_of_birth = $dt->dbformat($_POST['date_of_birth']);
 //$personal->date_of_appointment = $dt->dbformat($_POST['date_of_appointment']);
-$personal->contact_no = $_POST['contact_no'];
-$personal->email = $_POST['email'];
-$personal->postal_address = $_POST['postal_address'];
-$personal->pmdc_registration = $_POST['pmdc_registration'];
-$personal->marital_status = $_POST['marital_status'];
-$personal->health_professional = $_POST['health_professional'];
-$personal->status_two = $_POST['status_two'];
-$personal->residential_address = $_POST['residential_address'];
-$personal->current_address = $_POST['current_address'];
-$personal->residential_city = $_POST['residential_city'];
-$personal->current_city = $_POST['current_city'];
-$personal->employee_number = $_POST['employee_number'];
-$personal->seniority_number = $_POST['seniority_number'];
-$personal->cadre_id = $_POST['cadre_value'];
-$personal->ddo_number = $_POST['ddo_number'];
-$personal->ddo_description = $_POST['ddo_description'];
-$personal->husband_name = $_POST['husband_name'];
-$personal->created_by = $_SESSION['userid'];
+            $personal->contact_no = $_POST['contact_no'];
+            $personal->email = $_POST['email'];
+            $personal->postal_address = $_POST['postal_address'];
+            $personal->pmdc_registration = $_POST['pmdc_registration'];
+            $personal->marital_status = $_POST['marital_status'];
+            $personal->health_professional = $_POST['health_professional'];
+            $personal->status_two = $_POST['status_two'];
+            $personal->residential_address = $_POST['residential_address'];
+            $personal->current_address = $_POST['current_address'];
+            $personal->residential_city = $_POST['residential_city'];
+            $personal->current_city = $_POST['current_city'];
+            $personal->employee_number = $_POST['employee_number'];
+            $personal->seniority_number = $_POST['seniority_number'];
+            $personal->cadre_id = $_POST['cadre_value'];
+            $personal->ddo_number = $_POST['ddo_number'];
+            $personal->ddo_description = $_POST['ddo_description'];
+            $personal->husband_name = $_POST['husband_name'];
+            $personal->created_by = $_SESSION['userid'];
 
-$file = $personal->save();
+            $file = $personal->save();
+        }
 
-redirect(base_url() .'profile/add', 'refresh');
+        $data = array();
+        $data['page_title'] = 'Add Personal Record';
+        $data['main_content'] = $this->load->view('profile/add', $data, TRUE);
+        $this->load->view('layout', $data);
     }
 
 }

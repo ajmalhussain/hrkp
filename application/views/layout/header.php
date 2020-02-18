@@ -1,4 +1,4 @@
-<?php 
+<?php
 //$system_name = $this->db->get_where('settings', array('type' => 'system_name'))->row()->description;
 //$system_title = $this->db->get_where('settings', array('type' => 'system_title'))->row()->description;
 ?>
@@ -68,7 +68,7 @@
 
         <!-- Main Theme Stylesheet :: CSS -->
         <link href="<?php echo base_url('common/theme/css/style-light.css?1369414384') ?>" rel="stylesheet" />
-
+        <link href="<?php echo base_url('common/theme/css/green.css') ?>" rel="stylesheet" />
 
         <!-- LESS.js Library -->
         <script src="<?php echo base_url('common/theme/scripts/plugins/system/less.min.js') ?>"></script>
@@ -79,9 +79,25 @@
         <!-- Main Container Fluid -->
         <div class="container-fluid fluid menu-left">
 
-<?php include 'top-menu.php'; ?>
+            <div class="header navbar"> 
+                <!-- BEGIN TOP NAVIGATION BAR -->
+                <div class="header-inner">
+                    <!-- BEGIN LOGO --> 
+                    <a class="navbar-brand" href="http://c.lmis.gov.pk:80/" style="margin-top: -10px;"> <img src="http://c.lmis.gov.pk:80/public/assets/admin/layout/img/landing-images/contraceptive-logo.png" alt="vaccine LMIS" width="323" height="55"> </a> 
+                    <!-- END LOGO --> 
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER --> 
+                    <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <img src="http://c.lmis.gov.pk:80/public/assets/img/menu-toggler.png" alt=""> </a>
+                    <ul class="nav navbar-nav pull-right">
+                        <li> <a href="http://c.lmis.gov.pk:80/manuals.php" class="ul-header"> <img src="http://c.lmis.gov.pk:80/public/assets/img/header-icon/training_manuals.png" alt=""> </a> </li>
+                    </ul>
+                    <!-- END RESPONSIVE MENU TOGGLER --> 
+                </div>
+                <!-- END TOP NAVIGATION BAR --> 
+            </div>
+
+            <?php include 'top-menu.php'; ?>
 
             <!-- Sidebar menu & content wrapper -->
             <div id="wrapper">
 
-<?php include 'left-menu.php'; ?>
+                <?php include 'left-menu.php'; ?>

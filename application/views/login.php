@@ -29,13 +29,12 @@
 
         <!-- Main Theme Stylesheet :: CSS -->
         <link href="<?php echo base_url('common/theme/css/style-light.css?1369414386') ?>" rel="stylesheet" />
-
+        <link href="<?php echo base_url('common/theme/css/green.css') ?>" rel="stylesheet" />
 
         <!-- LESS.js Library -->
         <script src="<?php echo base_url('common/theme/scripts/plugins/system/less.min.js') ?>"></script>
     </head>
     <body class="login">
-
         <!--  row    ->
         <?php echo $main_content; ?>
         <!-- /.row -->

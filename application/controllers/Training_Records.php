@@ -12,7 +12,6 @@ class Training_Records extends CI_Controller {
     }
 
     public function index() {
-
         $doc = new training();
         $data = array();
         $data['page_title'] = 'Training Records';
