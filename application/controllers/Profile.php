@@ -68,7 +68,7 @@ class Profile extends CI_Controller {
                     case 'name':
                     case 'designation':
                     case 'bps':
-                        $where[] = "posts_record." . $_POST['posting1'] . " LIKE '%" . $_POST['posting'] . "%'";
+                        $where[] = "kp_posts." . $_POST['posting1'] . " LIKE '%" . $_POST['posting'] . "%'";
                         break;
                     case 'location_name':
                         $where[] = "postplace." . $_POST['posting1'] . " LIKE '%" . $_POST['posting'] . "%'";

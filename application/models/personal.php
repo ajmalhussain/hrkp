@@ -145,8 +145,8 @@ class personal extends Base_model {
     spouse.residential_city AS spouse_residential_city,
     spouse.current_city AS spouse_current_city,
         tbl_locations.LocName district_dom_name,
-        posts_record.designation,
-        posts_record.bps,
+        kp_posts.designation,
+        kp_posts.bps,
         postplace.wh_name place_of_posting
 FROM
     personal_record
@@ -159,7 +159,7 @@ LEFT JOIN childrens_record ON family_record.pk_id = childrens_record.family_reco
 LEFT JOIN personal_record spouse ON family_record.spouse_id = spouse.pk_id 
 LEFT JOIN posting_record ON personal_record.pk_id = posting_record.personal_record_id
 LEFT JOIN tbl_warehouse postplace ON postplace.wh_id = posting_record.post_place_id
-LEFT JOIN posts_record ON posting_record.post_id = posts_record.pk_id
+LEFT JOIN kp_posts ON posting_record.post_id = kp_posts.pk_id
 LEFT JOIN educational_record ON personal_record.pk_id = educational_record.personal_record_id
 LEFT JOIN tbl_locations ON personal_record.district_of_domicile = tbl_locations.PkLocID
                 $wherestr GROUP BY personal_record.pk_id $limit";
